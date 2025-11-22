@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Input Form</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            padding: 40px 35px;
+            width: 360px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            color: white;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 26px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            margin-bottom: 15px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            background: #ff7b00;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.25s;
+        }
+
+        input[type="submit"]:hover {
+            background: #ff5700;
+            transform: scale(1.05);
+        }
+
+        .result {
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h2>Enter a Number</h2>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="n" placeholder="Type a number...">
+            <input type="submit" value="Calculate">
+        </form>
+
+        {% if result %}
+        <div class="result">
+            Result: {{ result }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
+
+
+<!-- #
+<!Doctype html>
+<html>
+
+<body>
+    <form method="post">
+        {% csrf_token %}
+        Enter No: <input type="text" name="n">
+        <br>
+        <input type="submit" value="Click here">
+        <br>
+        <span>Result : {{ result }}</span>
+    </form>
+</body>
+
+</html>  -->

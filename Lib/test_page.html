@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Automation Demo</title>
+    <script>
+        function addMessage() {
+            const div = document.getElementById("output");
+            div.innerHTML = "<p id='newText'>New content added dynamically!</p>";
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to Selenium Demo</h1>
+    <button id="btn" onclick="addMessage()">Click Me</button>
+    <div id="output"></div>
+</body>
+</html>

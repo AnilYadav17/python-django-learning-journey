@@ -1,0 +1,5 @@
+a = input("Enter first mumber :")
+b = input("Enter another number :")
+# c = int(a) + int(b)
+c = float(a)+float(b)
+print(c)

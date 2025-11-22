@@ -1,0 +1,17 @@
+<!Doctype html>
+<html>
+
+<body>
+    <form method="post">
+        {% csrf_token %}
+        Enter First No: <input type="text" name="a">
+        <br>
+        Enter Second No: <input type="text" name="b">
+        <br>
+        <input type="submit" value="Calculate Sum ">
+        <br>
+    </form>
+    <span>Result : {{ result }}</span>
+</body>
+
+</html>

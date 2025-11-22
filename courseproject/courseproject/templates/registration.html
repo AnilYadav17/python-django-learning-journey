@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Online Course Mgt.</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<!--
+Template 2039 Sunflower
+http://www.tooplate.com/view/2039-sunflower
+-->
+<link href="{% static 'css/tooplate_style.css' %}" rel="stylesheet" type="text/css" />
+
+<script language="javascript" type="text/javascript">
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+
+<link rel="stylesheet" href="{% static 'css/nivo-slider.css' %}" type="text/css" media="screen" />
+<script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/jquery.nivo.slider.js' %}" type="text/javascript"></script>
+
+<script type="text/javascript">
+$(window).load(function() {
+	$('#slider').nivoSlider({
+		effect:'random',
+		slices:15,
+		animSpeed:500,
+		pauseTime:3000,
+		startSlide:0, //Set starting Slide (0 index)
+		directionNav:false,
+		directionNavHide:false, //Only show on hover
+		controlNav:false, //1,2,3...
+		controlNavThumbs:false, //Use thumbnails for Control Nav
+		pauseOnHover:true, //Stop animation while hovering
+		manualAdvance:false, //Force manual transitions
+		captionOpacity:0.8, //Universal caption opacity
+		beforeChange: function(){},
+		afterChange: function(){},
+		slideshowEnd: function(){} //Triggers after all slides have been shown
+	});
+});
+</script>
+
+</head>
+<body>
+
+<div id="tooplate_wrapper">
+	<div id="tooplate_header">
+    	
+        <div id="site_title"><h1><a href="#">Online Course Mgt.</a></h1></div>
+        
+        <div id="social_box">
+            <a href="#"><img src="{% static 'images/facebook.png' %}" alt="facebook" /></a>
+            <a href="#"><img src="{% static 'images/myspace.png' %}" alt="myspace" /></a>
+            <a href="#"><img src="{% static 'images/twitter.png' %}" alt="twitter" /></a>
+        </div>
+        
+        <div class="cleaner"></div>
+    </div>
+    
+    <div id="tooplate_menu">
+        <ul>
+            <li><a href="/" class="current">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Batches</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="/login/">Login</a></li>
+        </ul>    	
+        
+        <div id="search_box">
+            <form action="#" method="get">
+                <input type="text" value="Search" name="q" size="10" id="searchfield" title="searchfield" onfocus="clearText(this)" onblur="clearText(this)" />
+                <input type="submit" name="Search" value="" id="searchbutton" title="Search" />
+            </form>
+        </div>
+        <div class="cleaner"></div>
+    </div> <!-- end of tooplate_menu -->
+    
+    
+	
+    <div id="tooplate_main_top"></div>        
+    <div id="tooplate_main">
+        <div class="col_w900">
+            
+            <div class="cleaner"></div>
+		</div>
+    
+    	 <div class="col_w900 col_w900_last">
+    		<div class="col_w580 float_l">
+<div class="con_tit_01"><span>Registration Form</span></div>
+ <form method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td colspan="2"><strong>Personal Details:</strong></td>
+            </tr>
+
+            <tr>
+                <td>Full Name:</td>
+                <td><input type="text" placeholder="Enter Full Name" name="fullname" id="fullname" required></td>
+            </tr>
+
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <div class="gender-row">
+                        <label><input type="radio" name="gender" value="male"> Male</label>
+                        <label><input type="radio" name="gender" value="female"> Female</label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Mobile Number:</td>
+                <td><input type="number" placeholder="Enter Mobile Number" name="mobile"></td>
+            </tr>
+
+            <tr>
+                <td>Address:</td>
+                <td><textarea rows="4" placeholder="Enter Address" name="address" required></textarea></td>
+            </tr>
+
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" placeholder="Enter Email" name="emailid" required></td>
+            </tr>
+
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" placeholder="Enter Password" name="pwd" required></td>
+            </tr>
+
+            
+            <tr>
+                <td colspan="2" align="center" class="btns">
+                    <input type="submit" value="Create Profile">
+                    <input type="reset" value="Clear">
+                </td>
+            </tr>
+        </table>
+    </form>         
+                   	
+                    <div class="cleaner"></div>
+           </div>
+	        
+                
+			</div>
+        <div class="cleaner"></div>
+    </div> <!-- end of main -->
+    
+    <div id="tooplate_footer">
+    	Copyright © 2025 <a href="#">Universal Info</a> - 
+        Design: XYZ
+    </div> <!-- end of footer -->
+        
+</div> <!-- end of wrapper -->
+</body>
+</html>

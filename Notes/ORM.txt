@@ -1,0 +1,45 @@
+ORM ->Object Resource Model & Object Relational Model
+
+  -> It enables you to interact with your database.
+  -> ORM is a pythonical way to create SQL Query & Manipulate your database 
+     and get results in pythonic fashion.
+  
+============== ================ ============= ========== ============ ========
+
+Django ORM is one of the  best tools of Django and plays very essential role 
+to perform database ralated tasks.
+
+ORM FUnctions:
+1. save() :- for insert record table use method 
+          objectname.save() #like insert quey in mysql 
+   syntax :- objectname.models.tablename(colname=value, colname=value)
+
+   exp.
+   obj=models.register(name=name, dob=dob, mno=mno)
+   obj.save()
+
+2. all() :- To get all rows from table use for fetch all records from a table.
+   syntax:- 
+   result=models.objects.all()
+   exp.res=models.rgister.objects.all()
+   
+3. filter() :- for passing the condition with query  use.
+   syntax :- 
+   result=models.tablename.objects.filter(colname=values, colname=value)
+   exp.
+   res=models.register.objects.filter
+   (emailid=emailid, pwd=pwd)
+
+4. obj.delete() :- for delete record
+   exp.
+   eid=request.POST.get("eid")
+   obj=adminmodel.emp.objects.get(eid=eid)
+   obj.delete()
+
+5. for update record
+   filter() :- for where condition
+   update() :- for update record
+   syntax:
+   modelname.tablename.objects.filter(colname=value)
+   .update(colname=value, colname=value)
+============================================================================

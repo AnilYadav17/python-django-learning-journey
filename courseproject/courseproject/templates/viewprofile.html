@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Profile Page</title>
+
+    <link href="{% static 'css/tooplate_style.css' %}" rel="stylesheet" />
+
+    <link rel="stylesheet" href="{% static 'css/nivo-slider.css' %}" />
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nivo.slider.js' %}"></script>
+
+    <script>
+        $(window).on('load', function () {
+            $('#slider').nivoSlider({
+                effect: 'random',
+                slices: 15,
+                animSpeed: 500,
+                pauseTime: 3000,
+                pauseOnHover: true
+            });
+        });
+
+        function clearText(field) {
+            if (field.defaultValue === field.value) field.value = '';
+            else if (field.value === '') field.value = field.defaultValue;
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div id="tooplate_wrapper">
+
+        <!-- HEADER -->
+        <div id="tooplate_header">
+            <div id="site_title">
+                <h1><a href="#">Online Course Mgt.</a></h1>
+            </div>
+
+            <div id="social_box">
+                <a href="#"><img src="{% static 'images/facebook.png' %}" alt="facebook" /></a>
+                <a href="#"><img src="{% static 'images/myspace.png' %}" alt="myspace" /></a>
+                <a href="#"><img src="{% static 'images/twitter.png' %}" alt="twitter" /></a>
+            </div>
+
+            <div class="cleaner"></div>
+        </div>
+
+        <!-- MENU -->
+        <div id="tooplate_menu">
+            <ul>
+                <li><a href="/studenthome/" class="current">Home</a></li>
+                <li><a href="/courselist1/">Course list</a></li>
+                <li><a href="/batchlist2/">Batchlist</a></li>
+                <li><a href="/viewprofile/">Profile</a></li>
+                <li><a href="/logout1/">Logout</a></li>
+            </ul>
+
+            <div id="search_box">
+                <form action="#" method="get">
+                    <input type="text" value="Search" name="q" id="searchfield" onfocus="clearText(this)"
+                        onblur="clearText(this)" />
+                    <input type="submit" value="" id="searchbutton" />
+                </form>
+            </div>
+
+            <div class="cleaner"></div>
+        </div>
+
+        <!-- MAIN -->
+        <div id="tooplate_main">
+            <div class="col_w900 col_w900_last">
+                <div class="col_w580 float_l">
+
+                    <div class="con_tit_01"><span>Profile Details</span></div>
+
+                    {% for x in result %}
+                    <table border="1" align="center" cellpadding="8" cellspacing="0">
+                        <tr>
+                            <td>Serial No.</td>
+                            <td>{{ x.sno }}</td>
+                        </tr>
+                        <tr>
+                            <td>Full Name</td>
+                            <td><input type="text" value="{{ x.fullname }}"></td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td><input type="text" value="{{ x.gender }}"></td>
+                        </tr>
+                        <tr>
+                            <td>Mobile</td>
+                            <td><input type="number" value="{{ x.mobile }}"></td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td><input type="text" value="{{ x.address }}"></td>
+                        </tr>
+                        <tr>
+                            <td>Email ID</td>
+                            <td><input type="text" value="{{ x.emailid }}"></td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td><input type="text" value="{{ x.pwd }}"></td>
+                        </tr>
+                    </table>
+                    {% empty %}
+                    <p style="text-align:center; color:red;">No profile data found.</p>
+                    {% endfor %}
+
+                    <div class="cleaner"></div>
+                </div>
+            </div>
+
+            <div class="cleaner"></div>
+        </div>
+
+        <!-- FOOTER -->
+        <div id="tooplate_footer">
+            Copyright © 2025 <a href="#">Universal Info</a> -
+            Design: XYZ
+        </div>
+
+    </div>
+</body>
+
+</html>

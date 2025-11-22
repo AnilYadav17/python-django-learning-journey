@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+    <style>
+        body {
+            background-color: #f8f3eb;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            width: 420px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 25px 30px;
+            border-radius: 12px;
+            border: 1px solid #ccc;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px sold black;
+        }
+
+        td {
+            padding: 10px 5px;
+            vertical-align: top;
+            color: #333;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="password"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+            box-sizing: border-box;
+            font-size: 14px;
+            outline: none;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        textarea:focus {
+            border-color: #5b8ef1;
+            box-shadow: 0 0 5px rgba(91, 142, 241, 0.5);
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .gender-row {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .btns {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #5b8ef1;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            font-size: 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        input[type="reset"] {
+            background-color: #999;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4169e1;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <h2>Registration Form</h2>
+        <table>
+            <tr>
+                <td colspan="2"><strong>Personal Details:</strong></td>
+            </tr>
+
+            <tr>
+                <td>Full Name:</td>
+                <td><input type="text" placeholder="Enter Full Name" name="fullname" id="fullname" required></td>
+            </tr>
+
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <div class="gender-row">
+                        <label><input type="radio" name="gender" value="male"> Male</label>
+                        <label><input type="radio" name="gender" value="female"> Female</label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Mobile Number:</td>
+                <td><input type="number" placeholder="Enter Mobile Number" name="mobile"></td>
+            </tr>
+
+            <tr>
+                <td>Address:</td>
+                <td><textarea rows="4" placeholder="Enter Address" name="address" required></textarea></td>
+            </tr>
+
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" placeholder="Enter Email" name="emailid" required></td>
+            </tr>
+
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" placeholder="Enter Password" name="pwd" required></td>
+            </tr>
+
+            
+            <tr>
+                <td colspan="2" align="center" class="btns">
+                    <input type="submit" value="Create Profile">
+                    <input type="reset" value="Clear">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

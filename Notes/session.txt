@@ -1,0 +1,19 @@
+Session : Its a mecahanism where We can store user information on localserver or websever
+
+1: Create new session
+  -> request.session["sessionname"]=value
+
+2: Fetch from data
+  -> varname=request.session.get("sessionname")
+
+3: for expire
+
+   from django.contrib.auth import logout
+   
+   def logout1(request):
+   def request.session["emailid"]
+   del request.sesion["role"]
+   logout(request)
+   return redirect('http//localhost:8000')
+
+

@@ -4,3 +4,18 @@ __pycache__/
 *.sqlite3
 *.zip
 media/
+
+# Python
+__pycache__/
+*.pyc
+
+# Django
+db.sqlite3
+media/
+
+# Environments
+venv/
+.env
+
+# OS junk
+*.DS_Store

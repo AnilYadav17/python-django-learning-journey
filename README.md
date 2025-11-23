@@ -63,7 +63,7 @@
 
 ## 🖥️ Screenshots (Preview)
 
-> **Add your real screenshots here later.**  
+> I will add real screenshots here later.**  
 > These placeholders keep the README premium.
 
 <p align="center">

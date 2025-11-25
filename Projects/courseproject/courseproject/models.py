@@ -23,3 +23,9 @@ class batch(models.Model):
     batchtitle=models.CharField(max_length=20)
     startdate=models.DateField()
     facultyname=models.CharField(max_length=40)
+
+class admission(models.Model):
+    admissionno=models.AutoField(primary_key=True)
+    batchno=models.IntegerField()
+    admissiondate=models.DateField()
+    emaild=models.CharField(max_length=45)

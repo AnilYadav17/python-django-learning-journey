@@ -70,7 +70,7 @@ http://www.tooplate.com/view/2039-sunflower
         <div id="tooplate_menu">
             <ul>
                 <li><a href="/studenthome/" class="current">Home</a></li>
-                <li><a href="/courselist2/">Course list</a></li>
+                <li><a href="/courselist/">Course list</a></li>
                 <li><a href="/batchlist1">Batch List</a></li>
                 <li><a href="/viewprofile/">Profile</a></li>
                 <li><a href="/logout1/">Logout</a></li>
@@ -104,6 +104,7 @@ http://www.tooplate.com/view/2039-sunflower
                             <th>Batch Title </th>
                             <th>Start Date </th>
                             <th>Faculty Name </th>
+                            <th>Option </th>
                         </tr>
                         <tr>
                             {% for x in res %}
@@ -111,6 +112,9 @@ http://www.tooplate.com/view/2039-sunflower
                             <td>{{ x.batchtitle }}</td>
                             <td>{{ x.startdate }}</td>
                             <td>{{ x.facultyname }}</td>
+                            <td>
+                                <a href="/admission/?batchno={{ x.batchno }}">Select</a> 
+                            </td>
                         </tr>
                         {% endfor %}
                     </table>

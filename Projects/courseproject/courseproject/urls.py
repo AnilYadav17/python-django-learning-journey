@@ -17,6 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+
+from django.conf.urls.static import static
+from django.conf import settings
+media_url=settings.MEDIA_URL
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', views.register),
@@ -32,7 +37,9 @@ urlpatterns = [
     path('studentlist/', views.studentlist),
     path('courselist1/', views.courselist1),
     path('batchlist2/', views.batchlist2),
-    path('viewprofile/', views.viewprofile)
-]
+    path('viewprofile/', views.viewprofile),
+    path('admission/', views.admission),
+    path('success/' , views.success)
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

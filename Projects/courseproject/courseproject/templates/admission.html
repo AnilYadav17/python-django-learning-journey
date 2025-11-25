@@ -5,7 +5,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Course List</title>
+    <title>Admission Form</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <!--
@@ -68,14 +68,14 @@ http://www.tooplate.com/view/2039-sunflower
         </div>
 
         <div id="tooplate_menu">
-    <div id="tooplate_menu">
-        <ul>
-            <li><a href="/" class="current">Home</a></li>
-            <li><a href="/courselist/">Course List</a></li>
-            <li><a href="/batchlist1">Batches</a></li>
-            <li><a href="/register/">Register</a></li>
-            <li><a href="/login/">Login</a></li>
-        </ul>
+            <ul>
+                <li><a href="/studenthome/" class="current">Home</a></li>
+                <li><a href="/courselist/">Course list</a></li>
+                <li><a href="/batchlist1">Batch List</a></li>
+                <li><a href="/viewprofile/">Profile</a></li>
+                <li><a href="/logout1/">Logout</a></li>
+            </ul>
+
             <div id="search_box">
                 <form action="#" method="get">
                     <input type="text" value="Search" name="q" size="10" id="searchfield" title="searchfield"
@@ -97,30 +97,44 @@ http://www.tooplate.com/view/2039-sunflower
 
             <div class="col_w900 col_w900_last">
                 <div class="col_w580 float_l">
-                    <div class="con_tit_01"><span>Course List</span></div>
-                    <table border="1" align="center">
-                        <tr>
-                            <th>course id </th>
-                            <th>course name </th>
-                            <th>course duration </th>
-                            <th>course fees </th>
-                            <th>course details </th>
-                            <th>course icon </th>
-                        </tr>
-                        <tr>
-                            {% for x in res %}
-                            <td>{{ x.courseid }}</td>
-                            <td>{{ x.coursename }}</td>
-                            <td>{{ x.courseduration }}</td>
-                            <td>{{ x.fees }}</td>
-                            <td>{{ x.coursedetail }}</td>
+                    <div class="con_tit_01"><span>Admission Form</span></div>
+                    {% for x in res %}
+                    <form method="post">
+                        {% csrf_token %}
+                        <table border="1" align="center">
+                            <tr>
+                            <td>Batch No.</td>
                             <td>
-                                <img src="{{media_url}}{{x.courseicon}}"
-                                height="80" width="120">
+                                <input type="text" name="batchno" value="{{ x.batchno }}" readonly>
                             </td>
-                        </tr>
-                        {% endfor %}
-                    </table>
+                            </tr>
+                            <tr>
+                                <td>Batch Tittle </td>
+                                <td>
+                                    <input type="text" name="batchtitle" value="{{ x.batchtitle }}" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Start Date</td>
+                                <td>
+                                    <input type="text" name="startdate" value="{{ x.startdate }}" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Faculty Name </td>
+                                <td>
+                                    <input type="text" name="facultyname" value="{{ x.facultyname }}" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <input type="submit" value="book batch">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                    {% endfor %}
+
 
                     <div class="cleaner"></div>
                 </div>

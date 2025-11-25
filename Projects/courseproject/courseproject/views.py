@@ -2,6 +2,10 @@ from django.shortcuts import render,redirect
 from . import models
 from django.contrib.auth import logout
 from django.core.files.storage import FileSystemStorage
+import datetime
+#for display image
+from django.conf import settings
+media_url=settings.MEDIA_URL  
 
 def register(request):
     if request.method=="GET":
@@ -36,6 +40,7 @@ def login(request):
      #for create session
      request.session["emailid"]=emailid
      request.session["role"]=role
+     print(request.session["emailid"])
 
      if role=="student":
         return redirect("/studenthome/")
@@ -82,7 +87,7 @@ def addcourse(request):
 
 def courselist(request):
     res=models.course.objects.all()
-    return render(request, "courselist.html", {"res": res})
+    return render(request, "courselist.html", {"res": res, 'media_url':media_url})
 
 def addbatch(request):
    if request.method=="POST":
@@ -129,3 +134,20 @@ def viewprofile(request):
     result = models.mstuser.objects.filter(emailid=emailid)
     return render(request, "viewprofile.html", {"result": result})
 
+def admission(request):
+    if request.method == "GET":
+        batchno = request.GET.get("batchno")
+        print(batchno)
+        res = models.batch.objects.filter(batchno=batchno)
+        return render(request, "admission.html", {"res": res})
+    else:
+        emailid=request.session.get("emailid")
+        print("emailid - ",emailid)
+        batchno = request.POST.get("batchno")
+        x = datetime.datetime.now()
+        admissiondate = x.strftime("%Y-%m-%d")
+        res = models.admission(batchno=batchno, admissiondate=admissiondate, emaild=emailid)
+        #res.save()
+        return render(request, "success.html", {"res": ""})
+def success(request):
+   return render(request, "success.html")

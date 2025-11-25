@@ -1,0 +1,20 @@
+Query String in Django:
+A query string is the part of a URL that starts with "?" and contains data as key-value pairs. Django provides access to query string parameters through request.GET.
+
+Example:
+URL: /search/?q=python&page=2
+
+View:
+def search(request):
+    query = request.GET.get("q")
+    page = request.GET.get("page")
+
+Template:
+<a href="/profile/?user_id={{ user.id }}">View Profile</a>
+
+Uses:
+- filtering data
+- pagination
+- sorting
+- searching
+- passing non-sensitive parameters via URL

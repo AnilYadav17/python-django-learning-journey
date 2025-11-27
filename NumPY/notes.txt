@@ -1,0 +1,71 @@
+		NumPy
+NumPy is a core Python library for numerical and scientific computing.
+It provides fast multi-dimensional array objects called ndarray.
+NumPy arrays store data of the same type for efficient computation.
+It supports operations on 1D, 2D, and multi-dimensional arrays.
+NumPy is faster than Python lists for mathematical operations.
+
+Installation:
+1. Make sure Python and pip are installed.
+2. Install NumPy using:
+   pip install numpy
+
+If using a virtual environment:
+   python -m venv env
+   source env/bin/activate   (Linux/Mac)
+   env\Scripts\activate      (Windows)
+   pip install numpy
+
+Verify installation:
+   python -c "import numpy; print(numpy.__version__)"
+
+Example:
+import numpy as np
+arr = np.array([1, 2, 3])
+print(arr)
+
+Import:
+import numpy as np
+
+1. Create 1D Array :
+-> use the method . array() this function recieve list/tuple as anaargument and return an array 
+
+2. asarray():
+->this function avoids creating a new objec . 
+->its more efficient as compare to array()
+->it returns view of the original array.
+
+3. fromiter() :
+-> this function  creates array from an iterable 
+-> its more faster than normal array.
+
+============================================================================
+		INDEXING IN NUMPY
+-> It means accesing specific elements from a group of elements from a numpy array.
+-> numpy array is same as list accessing in python but works on multidimensional array also.
+
+
+===============================================================================
+		STACKING ARRAYS
+1. hstack() : join array horizontally
+2. vstack() : join array vertiacally
+
+its returns a new array and we can pass 2 array as an argument .
+
+===============================================================================
+
+		SPLITTING ARRAY
+Splitting array into multiple sub arrays , 
+Syntax :-> array_split(arrayname,int)
+
+
+flattern() :
+
+arange() :
+this function create values within a range like python range function.
+range(start , stop-1 , step)
+
+-------------------------------------------------------------------------------
+
+NUMPY STRING  FUNCTIONS
+MOD

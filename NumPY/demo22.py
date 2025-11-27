@@ -1,0 +1,10 @@
+import numpy as np 
+a=np.matrix([[1, 2],[5,6]])
+b=np.matrix([[10, 20],[50, 60]])
+print("add :", (a+b))
+print("sub :", (a-b))
+print("mul :", (a*b))
+print("div :", (a/b))
+print("transpose :", (a.T))
+print("inv:", (a.I))
+print("multiplication :", (a@b))

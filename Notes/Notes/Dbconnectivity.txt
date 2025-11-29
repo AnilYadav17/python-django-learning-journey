@@ -1,0 +1,68 @@
+For Database connectivity
+Create a new DB in mySql server, (create database coursedb)
+create a new pr in Django 
+open a new pr and settings.py file 
+we need following parameters for connectivity :
+
+DATABASES = { 	
+    'default' : {
+
+        'ENGINE' : 'django.db.backends.mysql',
+        'NAME' : 'coursedb',
+        'USER' : 'admin',
+        'PASSWORD' : '202020',
+        'HOST' : 'localhost',
+        }
+}
+
+
+MODELS : Manage our db table structure 
+
+from django.db import models 
+systax:
+class classname(models.Model):
+ fieldname=models.datatype(max_length=value)
+ 
+*here length is mandatory for string field.
+
+==========================================================================
+
+Model fields shows the colun or field name of table .
+
+-> field name must not be python/django reserve word or kewords.
+-> no whitespace allowed in field name .
+-> field name start with the character.
+
+=======================================================================================================================
+
+Django model field Datatypes : 
+
+1.CharField()  -> use for storing the dring or varchar value like name , address etc
+               -> name=models.CharField(max_length=40)
+              
+2. DateField() -> use for storing the value like date of birth , date of login . date of joining etc in yyyy/MM/dd
+               -> dob=models.DateField()
+               
+3. IntegerField() -> Use for storing value like rollnumber , id etc
+                  -> no need to pass max length
+                  -> rollno=models.IntegerField()
+                  
+                  
+4. DecimalField() -> for storing amount , rate type value.
+	          -> must pass maxlength max_digits and decimal_places
+	          -> rate=models.DecimalField()
+ 
+ 5. DateTimeField() -> for storing time value like login datetime.
+	            -> must pass maxlength .
+	            -> logindate=models.DateTimeField()
+	         
+6. AutoField() -> AutoField(primary_key=True)
+	       -> for creating auto generated primary key field.
+	       -> srno=models.AutoField(primary_key=True)
+	       
+7. unique() -> for set unique column value use like this 
+	    -> statename=models.charfield....................
+
+
+======================================================================================================================
+

@@ -1,0 +1,125 @@
+{
+	"tldrawFileFormatVersion": 1,
+	"schema": {
+		"schemaVersion": 2,
+		"sequences": {
+			"com.tldraw.store": 5,
+			"com.tldraw.asset": 1,
+			"com.tldraw.camera": 1,
+			"com.tldraw.document": 2,
+			"com.tldraw.instance": 25,
+			"com.tldraw.instance_page_state": 5,
+			"com.tldraw.page": 1,
+			"com.tldraw.instance_presence": 6,
+			"com.tldraw.pointer": 1,
+			"com.tldraw.shape": 4,
+			"com.tldraw.asset.bookmark": 2,
+			"com.tldraw.asset.image": 5,
+			"com.tldraw.asset.video": 5,
+			"com.tldraw.shape.arrow": 7,
+			"com.tldraw.shape.bookmark": 2,
+			"com.tldraw.shape.draw": 2,
+			"com.tldraw.shape.embed": 4,
+			"com.tldraw.shape.frame": 1,
+			"com.tldraw.shape.geo": 10,
+			"com.tldraw.shape.group": 0,
+			"com.tldraw.shape.highlight": 1,
+			"com.tldraw.shape.image": 5,
+			"com.tldraw.shape.line": 5,
+			"com.tldraw.shape.note": 9,
+			"com.tldraw.shape.text": 3,
+			"com.tldraw.shape.video": 4,
+			"com.tldraw.binding.arrow": 1
+		}
+	},
+	"records": [
+		{
+			"id": "shape_001",
+			"typeName": "shape",
+			"type": "note",
+			"props": {
+				"text": "⚙️ FUNCTIONS IN PYTHON ⚙️\nA function is a block of organized and reusable code used to perform a specific task.",
+				"color": "yellow",
+				"size": "large"
+			},
+			"x": 100,
+			"y": 100
+		},
+		{
+			"id": "shape_002",
+			"typeName": "shape",
+			"type": "note",
+			"props": {
+				"text": "📘 SYNTAX:\n\ndef function_name(parameters):\n    # code block\n    return value",
+				"color": "blue"
+			},
+			"x": 120,
+			"y": 200
+		},
+		{
+			"id": "shape_003",
+			"typeName": "shape",
+			"type": "note",
+			"props": {
+				"text": "📖 TYPES OF FUNCTIONS:\n1️⃣ Built-in Functions (e.g., print(), len(), max())\n2️⃣ User-defined Functions (created by the programmer)\n3️⃣ Lambda Functions (anonymous single-line functions)",
+				"color": "green"
+			},
+			"x": 120,
+			"y": 320
+		},
+		{
+			"id": "shape_004",
+			"typeName": "shape",
+			"type": "note",
+			"props": {
+				"text": "🧩 EXAMPLE:\n\ndef greet():\n    print('Hello, World!')\n\ngreet()",
+				"color": "purple"
+			},
+			"x": 120,
+			"y": 480
+		},
+		{
+			"id": "shape_005",
+			"typeName": "shape",
+			"type": "note",
+			"props": {
+				"text": "💡 FUNCTION WITH PARAMETERS:\n\ndef add(a, b):\n    return a + b\n\nresult = add(10, 5)\nprint('Sum =', result)",
+				"color": "orange"
+			},
+			"x": 120,
+			"y": 640
+		},
+		{
+			"id": "shape_006",
+			"typeName": "shape",
+			"type": "note",
+			"props": {
+				"text": "📤 RETURN STATEMENT:\n- Used to send data from the function to the caller.\n- Ends the function execution.\n\nExample:\n\ndef square(x):\n    return x * x\n\nprint(square(4))  # Output: 16",
+				"color": "pink"
+			},
+			"x": 120,
+			"y": 820
+		},
+		{
+			"id": "shape_007",
+			"typeName": "shape",
+			"type": "note",
+			"props": {
+				"text": "📌 KEY POINTS:\n✅ Functions help in code reusability.\n✅ Improve readability and debugging.\n✅ Reduce redundancy.",
+				"color": "cyan"
+			},
+			"x": 120,
+			"y": 1000
+		},
+		{
+			"id": "shape_008",
+			"typeName": "shape",
+			"type": "arrow",
+			"props": {
+				"start": "shape_001",
+				"end": "shape_007",
+				"color": "black"
+			}
+		}
+	]
+}
